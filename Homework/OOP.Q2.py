@@ -8,10 +8,10 @@ class Restaurant:
     def add_item_to_menu(self, item, price):
         self.item = item
         self.price = price
-        self.menu_items = dict.update({item: price})
+        self.menu_items = self.menu_items.update({item: price})
     
     def book_tables(self, customer_name, table_no):
-        self.book_table .append([customer_name, table_no])
+        self.book_table.append([customer_name, table_no])
 
     def customer_order(self, table_No, Order ):
         order_details = {"table_no": table_No, "Order": Order}
