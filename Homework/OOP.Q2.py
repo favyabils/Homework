@@ -6,9 +6,9 @@ class Restaurant:
         self.customer_orders = []
 
     def add_item_to_menu(self, item, price):
-        self.item = item
-        self.price = price
-        self.menu_items = self.menu_items.update({item: price})
+        self.menu_items[item]= price
+      
+        
     
     def book_tables(self, customer_name, table_no):
         self.book_table.append([customer_name, table_no])
@@ -18,8 +18,9 @@ class Restaurant:
         self.customer_orders.append(order_details)
 
     def print_menu(self):
-        for item, price in self.menu_items:
-            print("Food {} : Price {}".format(item, price))
+        for item, price in self.menu_items.items():
+            print("{}: {}".format(item, price))
+                 
 
     def print_table_reservations(self):
         for customer in self.book_table:
@@ -33,14 +34,13 @@ class Restaurant:
 restaurant = Restaurant()
 
 restaurant.add_item_to_menu("Cheeseburger", 9.99)
-
-restaurant.print_menu
-"""
 restaurant.add_item_to_menu("Pepper Soup", 8)
 restaurant.add_item_to_menu("Jollof rice & Chicken combo", 19.99)
 restaurant.add_item_to_menu("Pizza", 3.99)
 restaurant.add_item_to_menu("Shawarma:", 15)
 
+restaurant.print_menu()
+"""
 restaurant.book_tables("Mark", 1)
 restaurant.book_tables("Amy", 2)
 restaurant.book_tables("Ruby", 3)

@@ -13,6 +13,6 @@ class Inventory:
         self.database[item_id].update(field)
 
      def check_item_details(self, id):
-        return self.database[id]
+        return self.database[id] 
 
     
